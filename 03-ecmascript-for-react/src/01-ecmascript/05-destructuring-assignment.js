@@ -8,23 +8,22 @@
 const courses = [
   {
     id: 1,
-    title: 'React 펀더멘탈',
-    url: 'https://fundamentals.dev/react',
+    title: "React 펀더멘탈",
+    url: "https://fundamentals.dev/react",
   },
   {
     id: 2,
-    title: 'React Router 펀더멘탈',
-    url: 'https://fundamentals.dev/react-rouer',
+    title: "React Router 펀더멘탈",
+    url: "https://fundamentals.dev/react-rouer",
   },
   {
     id: 3,
-    title: 'Recoil 펀더멘탈',
-    url: 'https://fundamentals.dev/recoil',
+    title: "Recoil 펀더멘탈",
+    url: "https://fundamentals.dev/recoil",
   },
 ];
 
 function spreadArray() {
-
   // Block Scope
   {
     const reactCourse = courses[0];
@@ -58,8 +57,8 @@ function spreadObject() {
   // 🔶 구조 분해 할당 구문을 사용해 reactCourse 객체에서 항목을 분해 및 할당합니다.
   // 참고: https://mzl.la/3Jfrwpm
 
-
-  const { id: courseId, title: courseTitle, url:courseUrl } = reactCourse;
+  // 별칭(alias)
+  const { id: courseId, title: courseTitle, url: courseUrl } = reactCourse;
   // const courseId = id;
   // const courseTitle = title;
   // const courseUrl = url;
@@ -71,11 +70,11 @@ function spreadObject() {
 
 function spreadRender() {
   const koreanFoods = {
-    caption: '한식 메뉴',
+    caption: "한식 메뉴",
     rows: [
-      { headline: '뚝배기 불고기', content: 8000 },
-      { headline: '스팸치즈볶음밥', content: 7500 },
-      { headline: '불고기낙지덮밥', content: 9000 },
+      { headline: "뚝배기 불고기", content: 8000 },
+      { headline: "스팸치즈볶음밥", content: 7500 },
+      { headline: "불고기낙지덮밥", content: 9000 },
     ],
   };
 
@@ -86,32 +85,36 @@ function spreadRender() {
     return removeSpaceHTMLString(/* html */ `
       <table class="table">
         <caption class="sr-only">${data.caption}</caption>
-        ${data.rows.reduce(function (htmlString, item) {
+        ${data.rows.reduce(function (
+          htmlString /* acc */,
+          /* item */ { headline, content } // 여기서 구조분해 할당 가능
+        ) {
           // 🔶 구조 분해 할당 구문을 사용해 item 객체에서 항목을 분해 및 할당합니다.
           // 참고: https://mzl.la/3Jfrwpm
+          // const { headline, content } = item; // item을 구조분해할당함
 
           return (
             htmlString +
             /* html */ `
               <tr>
-                <th>${item.headline}</th>
-                <td>${numberWithComma(item.content)}원</td>
+                <th>${headline}</th>
+                <td>${numberWithComma(content)}원</td>
               </tr>
             `
           );
-        }, '')}
+        }, "")}
       </table>
     `);
   }
 }
 
 function numberWithComma(numberValue) {
-  return numberValue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  return numberValue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 }
 
 function removeSpaceHTMLString(htmlString) {
   return htmlString.replace(/\s+<|\n|>\s+/g, function ($1) {
-    return $1.indexOf('<') > -1 ? '<' : $1.indexOf('>') > -1 ? '>' : '';
+    return $1.indexOf("<") > -1 ? "<" : $1.indexOf(">") > -1 ? ">" : "";
   });
 }
 
