@@ -1,11 +1,12 @@
-// JavaScript를 사용해서 Node.js 런타임 환경에서 실행시킬 프로그램 작성
+// JavaScript를 사용해 Node.js 런타임 환경에서 실행시킬 프로그램 작성
+
 import liveServer from "live-server";
 
 const params = {
-  port: 3000,
   host: "localhost",
+  port: 3000,
   open: false,
-  mount: [["/", "./pubilc"]],
+  mount: [["/", "./public"]],
 };
 
 liveServer.start(params);
