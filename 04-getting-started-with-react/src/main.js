@@ -81,11 +81,13 @@ function unmount() {
   reactDomRoot.unmount();
 }
 
+render();
+
 // 타이머 웹 API
 // setTimeout
 
 // 특정 시간이 지나면 앱을 화면에 렌더링 하세요
-setTimeout(render, 2000);
+// setTimeout(render, 2000);
 
 // 특정 시간이 지나면 렌더링된 앱을 화면에서 표시하지 마세요
-setTimeout(() => reactDomRoot.unmount(), 4000);
+// setTimeout(() => reactDomRoot.unmount(), 4000);
