@@ -1,8 +1,6 @@
-// const list = h(
-//   "ul", // 컴포넌트 타입
-//   { className: "architectures", lang: "en" }, // 컴포넌트 속성(props)
-//   ...children // 컴포넌트 자식들(칠드런) -> 리액트 엘리먼트 | 문자 | 숫자 | null 또는 데이터 배열
-// );
+// // TODO: 컴포넌트 정의(with 속성) & 추출
+// // <ul> 리액트 컴포넌트를 생성하는 클래스 컴포넌트를 작성하세요.
+// // 컴포넌트 이름은 여러분이 생각하는 "그것"입니다. (여러분의 작명 센스를 볼께요.)
 
 import React from "https://esm.sh/react";
 

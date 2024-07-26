@@ -1,5 +1,7 @@
 import React from "https://esm.sh/react";
 
+// 컴포넌트 추출
+
 // 컴포넌트란? 재사용 메커니즘(클래스 또는 함수)을 사용해 리액트 엘리먼트를 반환하는 것을 말합니다.
 
 // 1. 리액트 클래스 컴포넌트 (재사용)
@@ -29,8 +31,6 @@ class NumberList extends React.Component {
       .fill(null)
       .map((_, index) => React.createElement("li", {}, `${index + 1}01`));
 
-    console.log(children);
-
     // 리액트 엘리먼트 반환
     return React.createElement(
       "ul",
@@ -42,11 +42,8 @@ class NumberList extends React.Component {
 
 export default NumberList;
 
-/* -------------------------------------------------------------------------- */
-/*                                    사용 예시                                   */
-/* -------------------------------------------------------------------------- */
 // 리액트 월드에서 컴포넌트를 사용해 리액트 엘리먼트를 생성하려면?
 // 별칭 h === React.createElement(컴포넌트_참조)
-// const list1 = h(NumberList, { id: "number-1", count: 3 });
-// const list2 = h(NumberList, { id: "number-2", count: 5 });
-// const list3 = h(NumberList, { id: "number-3", count: 11 });
+// const list1 = h(NumberList, { id: 'number-1', count: 3 });
+// const list2 = h(NumberList, { id: 'number-2', count: 5 });
+// const list3 = h(NumberList, { id: 'number-3', count: 11 });
