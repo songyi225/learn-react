@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "pnpm": "^9.6.0"
+  },
+  "devDependencies": {
+    "vite": "^5.3.5"
   }
 }
